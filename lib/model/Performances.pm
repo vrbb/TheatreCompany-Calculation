@@ -1,4 +1,5 @@
 package model::Performances; # Geral
+use strict;
 
 sub new {
     my $this = shift;
@@ -6,7 +7,7 @@ sub new {
     my $self = {
         name => shift,
         audience => shift,
-    }
+    };
 
     return bless $self, $class;
 }
@@ -25,7 +26,7 @@ sub new {
     my $self = {
         name => shift,
         audience => shift,
-    }
+    };
 
     return bless $self, $class;
 }
@@ -44,7 +45,7 @@ sub new {
     my $self = {
         name => shift,
         audience => shift,
-    }
+    };
 
     return bless $self, $class;
 }
