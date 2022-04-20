@@ -1,7 +1,8 @@
-package model::Performances; # Geral
-use strict;
+package model::Performances; # General
+use strict; # Error readability
 
-sub new {
+
+sub new { # Constructor
     my $this = shift;
     my $class = ref ($this) || $this;
     my $self = {
@@ -17,16 +18,18 @@ sub amount_for { # Method
     my $self = shift; 
 }
 
-package model::Tragedy; # sub-Class
+package model::Tragedy; # Class
+use strict; # Error readability
+
 @ISA = qw /model::Performances/; 
 
-sub new {
+sub new { # Constructor
     my $this = shift;
     my $class = ref ($this) || $this;
-    my $self = {
-        name => shift,
-        audience => shift,
-    };
+    my $name = shift;
+    my $audience = shift;
+    
+    my $self = new Performances($name,$audience);
 
     return bless $self, $class;
 }
@@ -36,16 +39,18 @@ sub amount_for { # Method
     my $self = shift; 
 }
 
-package model::Comedy; # sub-Class
+package model::Comedy; # Class
+use strict; # Error readability
+
 @ISA = qw /model::Performances/; 
 
-sub new {
+sub new {  # Constructor
     my $this = shift;
     my $class = ref ($this) || $this;
-    my $self = {
-        name => shift,
-        audience => shift,
-    };
+    my $name = shift;
+    my $audience = shift;
+    
+    my $self = new Performances($name,$audience);
 
     return bless $self, $class;
 }
