@@ -1,5 +1,8 @@
-package model::Performances; # General
+#!/usr/bin/perl
 use strict; # Error readability
+use warnings;
+
+package model::Performances; # General
 
 use constant # Creating constants for play types
     TYPE_PLAY => {
@@ -26,7 +29,6 @@ sub amount_for { # Method
 }
 
 package model::Tragedy; # Class
-use strict; # Error readability
 
 @ISA = qw /model::Performances/; 
 
@@ -44,7 +46,6 @@ sub new { # Constructor
 
 
 package model::Comedy; # Class
-use strict; # Error readability
 
 @ISA = qw /model::Performances/; 
 
