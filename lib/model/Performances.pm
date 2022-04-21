@@ -6,8 +6,8 @@ package model::Performances; # General
 
 use constant # Creating constants for play types
     TYPE_PLAY => {
-        "tragedy" => 1,
-        "comedy" => 2
+        "tragedy" => 40,
+        "comedy" => 60
     };
 
 sub new { # Constructor
@@ -26,6 +26,7 @@ sub new { # Constructor
 
 sub amount_for { # Method
     my $self = shift; 
+    return ($self->audience * 1000) / type_play;
 }
 
 package model::Performances::Tragedy; # Class
