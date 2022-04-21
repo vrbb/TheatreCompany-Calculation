@@ -28,9 +28,8 @@ sub amount_for { # Method
     my $self = shift; 
 }
 
-package model::Tragedy; # Class
-
-@ISA = qw /model::Performances/; 
+package model::Performances::Tragedy; # Class
+use parent 'Performances';    # sets @Performances::Tragedy::ISA = ('Performances');
 
 sub new { # Constructor
     my $this = shift;
@@ -46,8 +45,7 @@ sub new { # Constructor
 
 
 package model::Comedy; # Class
-
-@ISA = qw /model::Performances/; 
+use parent 'Performances';    # sets @Performances::Comedy::ISA = ('Performances');
 
 sub new {  # Constructor
     my $this = shift;
