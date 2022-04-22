@@ -45,7 +45,7 @@ sub new { # Constructor
 
 
 
-package model::Comedy; # Class
+package model::Performances::Comedy; # Class
 use parent 'Performances';    # sets @Performances::Comedy::ISA = ('Performances');
 
 sub new {  # Constructor
