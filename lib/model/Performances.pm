@@ -1,6 +1,7 @@
 #!/usr/bin/perl
 use strict; # Error readability
 use warnings;
+use Moose;
 
 package model::Performances; # General
 
@@ -10,19 +11,17 @@ use constant # Creating constants for play types
         "comedy" => 60
     };
 
-sub new { # Constructor
-    my $this = shift;
-    my $class = ref ($this) || $this;
-    # Attributes in common across classes
-    my $self = {
-        name => shift,
-        audience => shift,
-        type_play => shift,
-    };
-
-    return bless $self, $class;
-}
-
+# Declare the attributes
+has "name" => {
+    is => 'rw'  # Declare read and write at runtime
+}, 
+"audience" => {
+    isa => 'Int', # Declare as integer
+    is => 'rw'
+},
+"type_play" => {
+    is => 'rw'
+} ;
 
 sub amount_for { # Method
     my $self = shift; 
